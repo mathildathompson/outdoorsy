@@ -1,3 +1,9 @@
 class Wifi < ActiveRecord::Base
-  # attr_accessible :title, :body
+
+    def getwifiinfo
+  	wifidata = File.open("public/manhattanwifi.json").read
+  	allwifi = JSON(wifidata)
+
+  end 
+
 end

@@ -7,12 +7,9 @@ class OutdoorAreaTest < ActiveSupport::TestCase
   		@results = @area.getparkinfo["data"] 
   	end 
 
-
+  	
   		should "create outdoor areas" do 
   			assert_equal @results.length, 378
   		end 
-
-
-  		
   end 
 end
