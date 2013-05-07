@@ -6,7 +6,6 @@ class OutdoorArea < ActiveRecord::Base
     parkdata = File.open("public/manhattanparks.json").read
 
     allparks = JSON(parkdata)
-
   end
 
 
