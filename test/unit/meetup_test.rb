@@ -6,10 +6,10 @@ class MeetupTest < ActiveSupport::TestCase
 	
 	setup do
 		@meetup=Meetup.new
-		@results=@meetup.get_event( "hiking", 40.714623, -74.006605  )
+		@results=@meetup.get_event("hiking", 40.714623, -74.006605  )
 	end
 
-	should "Give me events from 11223" do
+	should "Give me events from NY long lat" do
 		assert_equal 129, @results.length
 		
 	end
