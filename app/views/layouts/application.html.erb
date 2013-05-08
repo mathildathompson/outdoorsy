@@ -8,7 +8,14 @@
 </head>
 <body>
 
-	<%= notice %>
+<div class="logindetails">
+    <%= notice %>
+	<% if user_signed_in? %>
+    <div><%= current_user.name %></div>
+    <% end %>
+</div>
+
+	
 	<%#= alert %>
 
 	
