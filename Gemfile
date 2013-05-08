@@ -7,13 +7,15 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'devise'
-
+gem 'poltergeist'
+gem 'rmeetup'
 gem 'foursquare2', '~> 1.9.6'
 gem 'geocoder'
 gem 'pry'
 gem 'yelpster'
 gem 'shoulda'
 gem 'mocha'
+gem 'jquery-rails'
 
 
 group :test do
@@ -34,8 +36,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'poltergeist'
+
 
 
 

@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(:version => 20130508025005) do
 
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "events", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -26,6 +33,19 @@ ActiveRecord::Schema.define(:version => 20130508025005) do
   create_table "likes", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "meetups", :force => true do |t|
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "zipcode"
+    t.string   "topic"
+    t.string   "event_url"
+    t.text     "description"
+    t.integer  "yes_rsvp_count"
   end
 
   create_table "outdoor_areas", :force => true do |t|

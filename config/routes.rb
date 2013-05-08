@@ -6,6 +6,10 @@ Outdoorsy::Application.routes.draw do
   end
   root :to => "users#index"
   devise_for :users
+
+  resources :comments, :only => [:create]
+ 
+
   resources :users
 
   
