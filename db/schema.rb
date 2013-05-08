@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507214550) do
+ActiveRecord::Schema.define(:version => 20130508025005) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -54,8 +54,23 @@ ActiveRecord::Schema.define(:version => 20130507214550) do
   end
 
   create_table "restaurants", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "latitude"
+    t.string   "city"
+    t.string   "state"
+    t.string   "yelp_id"
+    t.string   "yelp_stars_url"
+    t.string   "name"
+    t.string   "address"
+    t.string   "zip_code"
+    t.string   "image_url"
+    t.string   "yelp_rating"
+    t.string   "foursquare_rating"
+    t.string   "foursquare_review"
+    t.boolean  "wifi"
+    t.boolean  "outdoor_area"
+    t.string   "category"
   end
 
   create_table "users", :force => true do |t|
@@ -71,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20130507214550) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
