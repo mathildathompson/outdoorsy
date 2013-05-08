@@ -7,12 +7,20 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'devise'
+
 gem 'foursquare2', '~> 1.9.6'
 gem 'geocoder'
 gem 'pry'
 gem 'yelpster'
 gem 'shoulda'
 gem 'mocha'
+
+
+group :test do
+	gem 'cucumber-rails'
+	gem 'database_cleaner'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,10 +37,7 @@ end
 gem 'jquery-rails'
 gem 'poltergeist'
 
-group :test do
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
