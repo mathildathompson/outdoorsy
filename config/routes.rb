@@ -1,5 +1,15 @@
 Outdoorsy::Application.routes.draw do
+  
+
+   authenticated :user do
+    root :to => 'users#index'
+  end
+  root :to => "users#index"
   devise_for :users
+  resources :users
+
+  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,9 +61,10 @@ Outdoorsy::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   #root :to => 'users#sign_in'
-devise_scope :user do
-  root to: "devise/sessions#new"
-end
+# devise_scope :user do
+#   root to: "devise/sessions#new"
+
+# end
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
