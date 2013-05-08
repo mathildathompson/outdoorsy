@@ -21,7 +21,6 @@ class Meetup < ActiveRecord::Base
   binding.pry
   end
 
-
-
-
 end
+
+
