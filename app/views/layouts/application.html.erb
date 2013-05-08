@@ -8,7 +8,20 @@
 </head>
 <body>
 
+<div class="logindetails">
+    <%= notice %>
+	<% if user_signed_in? %>
+    <div><%= current_user.name %></div>
+    <% end %>
+</div>
+
+	
+	<%#= alert %>
+
+	
 <%= yield %>
 
 </body>
 </html>
+
+<%#= javascript_include_tag :defaults %>
