@@ -1,18 +1,20 @@
 Outdoorsy::Application.routes.draw do
 
 
-   authenticated :user do
-    root :to => 'users#index'
-  end
-  root :to => "users#index"
-  devise_for :users
+authenticated :user do
+  root :to => 'users#index'
+end
 
-  resources :comments, :only => [:create]
- 
+root :to => "users#index"
+devise_for :users
 
-  resources :users
+resources :comments, :only => [:create]
 
-  
+resources :users
+
+resources :events
+
+
 
 
   # The priority is based upon order of creation:
