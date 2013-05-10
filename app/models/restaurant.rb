@@ -1,5 +1,6 @@
 class Restaurant < ActiveRecord::Base
   attr_accessible :latitude,
+  :longitude,
   :city,
   :state,
   :yelp_id,
@@ -16,14 +17,14 @@ class Restaurant < ActiveRecord::Base
   :category
   
 
-def self.outdoor_restaurant_search(latitude, longitude, city)
+def self.outdoor_restaurant_search(latitude, longitude)
     @yelpdata = Yelp::Client.new
-    request = Yelp::V2::Search::Request::GeoPoint.new(:term => "outdoor seating", :city => city, :latitude => latitude, :longitude => longitude, :consumer_key => 'mvNDV5Z5OYwaPTR_KcZsQw', 
+    request = Yelp::V2::Search::Request::GeoPoint.new(:term => "outdoor seating", :latitude => latitude, :longitude => longitude, :consumer_key => 'mvNDV5Z5OYwaPTR_KcZsQw', 
       :consumer_secret => 'N-czzlOPx5XsuPB1H0wPtmAKQjM', 
       :token => '2X-gnp-3qyIpont9bInLr3sakMzeJOHC', 
       :token_secret => 'xQ0mDjscdT00a3ZxDrHgnlaTDRg')
     results = @yelpdata.search(request)
-    outdoorresults = []
+    @outdoorresults = []
       results["businesses"].each do |rest|
         restaurant = Restaurant.new
         restaurant.name = rest["name"] 
@@ -33,10 +34,12 @@ def self.outdoor_restaurant_search(latitude, longitude, city)
         restaurant.address = rest["location"]["address"][0]
         restaurant.yelp_stars_url = rest["rating_img_url"]
         restaurant.category = rest["categories"][0][0]
-        outdoorresults << restaurant
-        restaurant.save
+        @outdoorresults << restaurant
+        # restaurant.save
       end
-      binding.pry
+
+      return @outdoorresults
+      # binding.pry
           # yelpdata = []
         # yelpdata << yelp_venue(restaurant.yelp_id.to_s)
         # restaurant.yelp_rating = yelpdata.first["rating"]

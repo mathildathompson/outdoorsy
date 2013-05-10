@@ -16,14 +16,23 @@ gem 'yelpster'
 gem 'shoulda'
 gem 'mocha'
 gem 'jquery-rails'
+
 gem 'better_errors'
+
+
+gem 'jquery-ui-rails'
 
 
 group :test do
 	gem 'cucumber-rails'
 	gem 'database_cleaner'
-end
+	gem 'shoulda'
+end 
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'database_cleaner'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

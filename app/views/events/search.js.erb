@@ -1,0 +1,16 @@
+$('#restaurantslist').html("");
+
+<% @restaurants.each do |restaurant| %>
+
+  $('#restaurantslist').append('<%= escape_javascript(render restaurant, :locals => {:restaurant => @restaurant}) %>');
+
+<% end %>
+
+$('#meetups').html("");
+
+<% @meetups.each do |meetup| %>
+
+  $('#meetups').append('<%= escape_javascript(render meetup, :locals => {:meetup => @meetups}) %>');
+
+<% end %>
+
