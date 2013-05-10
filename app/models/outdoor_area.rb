@@ -7,22 +7,28 @@ attr_accessible :latitude, :longitude, :name, :address, :acreage
     allparks = JSON(parkdata)
   end
 
+  reverse_geocoded_by :latitude, :longitude 
+  after_validation :reverse_geocode 
 
-  # def jsonpull 
+   # def latandlong
+   #   "#{destination.name} #{self.latitude}"
+   # end
 
-  # 	@newpark = OutdoorArea.new 
+  def self.parksearch(latitude, longitude)
+    binding.pry
+    
+    parkresults = []
+    output = OutdoorArea.near([latitude, longitude], 0.6)
+    parkresults << output 
+    parkresults.each do |p|
+      parks = OutdoorArea.new
+      parks.name = p["name"]
+      binding.pry 
+    end 
+    return parkresults
 
 
-  # 	json = ActiveSupport::JSON.decode(File.read('public/manhattanparks.json')) 
-  # 	json["data"].each do |a| 
-  # 		@newpark.name = a[0][11]
-
-  # 		@newpark.acreage = a[0][13]
-  # 			# :address => a[i][16][0],
-  # 			# :latitude => a[i][16][1], 
-  # 			# :longitude => a[i][16][2])
-  # 	end
-  # end 
+  end 
 
 
 end

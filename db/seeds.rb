@@ -21,6 +21,14 @@ json["data"].each do |a|
 		:longitude => a[16][2])
 end
 
+wifiread = ActiveSupport::JSON.decode(File.read('public/manhattanwifi.json')) 
+wifiread["data"].each do |a| 
+	Wifi.create!(:name => a[10], 
+		:location => a[9], 
+		:address => a[15][0])
+end 
+
+
 
 
   	# @newpark = OutdoorArea.new 

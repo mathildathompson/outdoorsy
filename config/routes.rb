@@ -15,6 +15,8 @@ resources :users
 resources :events
 
 
+  resources :outdoor_areas
+
 
 
   # The priority is based upon order of creation:
