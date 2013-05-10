@@ -5,28 +5,33 @@
 <div id="map-canvas">
 </div>
 </div>
-
+<div id="droparea">
+</div>
 <div id="mainpage">
+
+
 
 <%= render :partial => 'events/form' %>
 
 <h1>Outdoor Restaurants</h1>
 
 <div id="restaurants">
+
+<ul id="restaurantslist" class="fly-simplified">
 <% @restaurants.each do |restaurant| %>
 <%= render :partial => 'restaurants/restaurant', :locals => {:restaurant => @restaurant} %>
 <% end %>
+</ul>
 </div>
 
-
 <h1>Events</h1>
-<div id="meetups">
-
-
+<div id="meetups" style="overflow: scroll; width: 850px; height: 200px;">
 <% @meetups.each do |meetup| %>
 <%= render :partial => 'meetups/meetup', :locals => {:meetup => @meetup} %>
 <% end %>
 
 </div>
 </div>
+
+
 

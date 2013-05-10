@@ -14,6 +14,9 @@ top:0px;
 body{
   margin: 0;
   height: 100%;
+  // background-color:#e0eaff;
+
+  // background: url('sunshine.jpg') no-repeat center center fixed; 
 }
 
 html{
@@ -22,6 +25,8 @@ html{
 
 h1#logo {
   color: white;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #F00000;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -35,7 +40,7 @@ h1#logo {
 #search{
   padding-left: 30px;
   padding-top:10px;
-  width: 320px;
+  width: 600px;
    height: 50px;
    margin-left: 5px;
    border: 5px solid white;
@@ -49,6 +54,98 @@ h1#logo {
   outline: #F00000 solid thin;
 }
 
+.locationbar{
+  height:30px;
+  width: 320px;
+  background-color: #FA8816 ;
+  padding-left: 30px;
+  padding-top:5px;
+  margin: 5px;
+  color: white;
+  font-size: 15px;
+  // border: 5px solid white;
+}
+
+.locationbar#meetup{
+  width:800px;
+}
+
+#restaurants{
+  // height: 400px;
+}
+
+#mainpage{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#map-canvas{
+  height:100%;
+  width: 100%;
+}
+
+#googlemap{
+  height:400px;
+  width: 600px;
+  display: inline-block;
+  position: fixed;
+  right: 0px;
+  top: 90px;
+}
+
+#droparea{
+  height: 300px;
+  width: 595px;
+  background-color: white;
+  border: 5px solid black;
+   display: inline-block;
+  position: fixed;
+  bottom: 5px;
+  right: 0px;
+}
+
+ul {
+
+  position: relative;
+  width: 360px;
+  height: 480px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  list-style: none;
+
+  -webkit-perspective: 400px;
+     -moz-perspective: 400px;
+      -ms-perspective: 400px;
+       -o-perspective: 400px;
+          perspective: 400px;
+}
+  li {
+    position: relative;
+    // padding: 16px;
+    // background: #eee;
+    // color: #252525;
+    // font-size: 18px;
+    z-index: 2;
+     height:30px;
+  width: 320px;
+  background-color: #FA8816 ;
+  padding-left: 30px;
+  padding-top:5px;
+  margin: 5px;
+  color: white;
+  font-size: 15px;
+
+    -webkit-transform: translateZ(0px);
+       -moz-transform: translateZ(0px);
+        -ms-transform: translateZ(0px);
+         -o-transform: translateZ(0px);
+            transform: translateZ(0px);
+  }
+  // ul li:nth-child(odd) {
+  //   background: #fff;
+  // }
 
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.

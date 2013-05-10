@@ -16,6 +16,7 @@ gem 'yelpster'
 gem 'shoulda'
 gem 'mocha'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :test do
 	gem 'cucumber-rails'

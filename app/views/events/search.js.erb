@@ -1,8 +1,8 @@
-$('#restaurants').html("");
+$('#restaurantslist').html("");
 
 <% @restaurants.each do |restaurant| %>
 
-  $('#restaurants').append('<%= escape_javascript(render restaurant, :locals => {:restaurant => @restaurant}) %>');
+  $('#restaurantslist').append('<%= escape_javascript(render restaurant, :locals => {:restaurant => @restaurant}) %>');
 
 <% end %>
 
@@ -13,3 +13,4 @@ $('#meetups').html("");
   $('#meetups').append('<%= escape_javascript(render meetup, :locals => {:meetup => @meetups}) %>');
 
 <% end %>
+

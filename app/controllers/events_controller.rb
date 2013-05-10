@@ -24,7 +24,8 @@ class EventsController < ApplicationController
   latitude = latlng[0]
   longitude = latlng[1]
   @restaurants = Restaurant.outdoor_restaurant_search(latitude,longitude)
-  @meetups = Meetup.get_event("yoga",latitude,longitude)
+  @meetups = Meetup.get_event("hiking",latitude,longitude)
+
   # binding.pry
   render :template => 'events/search', :content_type => 'text/javascript'
 

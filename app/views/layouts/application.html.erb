@@ -5,6 +5,17 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGWlVKhl5vwogbFLmGgZF5-EIh3WUfg-8&sensor=false">
+  </script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    initMap();
+
+
+  });
+  </script>
 </head>
 <body>
 
