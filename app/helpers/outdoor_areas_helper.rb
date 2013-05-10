@@ -1,0 +1,2 @@
+module OutdoorAreasHelper
+end

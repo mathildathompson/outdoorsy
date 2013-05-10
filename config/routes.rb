@@ -11,6 +11,7 @@ Outdoorsy::Application.routes.draw do
  
 
   resources :users
+  resources :outdoor_areas
 
   
 

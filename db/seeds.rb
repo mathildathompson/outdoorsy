@@ -21,8 +21,8 @@ json["data"].each do |a|
 		:longitude => a[16][2])
 end
 
-json = ActiveSupport::JSON.decode(File.read('public/manhattanwifi.json')) 
-json["data"].each do |a| 
+wifiread = ActiveSupport::JSON.decode(File.read('public/manhattanwifi.json')) 
+wifiread["data"].each do |a| 
 	Wifi.create!(:name => a[10], 
 		:location => a[9], 
 		:address => a[15][0])

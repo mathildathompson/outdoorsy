@@ -5,6 +5,7 @@ class OutdoorAreaTest < ActiveSupport::TestCase
   	setup do 
   		@area = OutdoorArea.new 
   		@results = @area.getparkinfo["data"] 
+      binding.pry
 
   	end 
 
@@ -15,8 +16,12 @@ class OutdoorAreaTest < ActiveSupport::TestCase
 
   		should "get the name of the park" do 
   			assert_instance_of String, @results[0][11]
-  			binding.pry
   		end 
+
+      should "output some parks given a lat and long" do 
+        OutdoorArea.parksearch(40.76013727, -73.96245931)
+        
+      end 
 
   end 
 end
