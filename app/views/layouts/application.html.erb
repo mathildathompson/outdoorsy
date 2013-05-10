@@ -2,24 +2,28 @@
 <html>
 <head>
   <title>Outdoorsy</title>
+
+   <script>
+      users = <%=raw(User.all.to_json) %>
+  </script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<div class="logindetails">
-    <%= notice %>
-	<% if user_signed_in? %>
-    <div><%= current_user.name %></div>
-    <% end %>
-</div>
-
-	
 	<%#= alert %>
 
 	
 <%= yield %>
+
+<div class="logindetails">
+          <%= notice %>
+        <% if user_signed_in? %>
+          <div><%= current_user.name %></div>
+          <% end %>
+      </div>
 
 </body>
 </html>

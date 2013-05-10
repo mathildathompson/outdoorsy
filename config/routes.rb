@@ -1,6 +1,12 @@
 Outdoorsy::Application.routes.draw do
 
 
+  get "friendships/create"
+
+  get "friendships/destroy"
+
+  post "users/create"
+
    authenticated :user do
     root :to => 'users#index'
   end
