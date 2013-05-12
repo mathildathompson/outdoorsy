@@ -1,7 +1,7 @@
 Outdoorsy::Application.routes.draw do
 
 
-
+ post "users/show"
 
   post "users/create"
 
@@ -15,13 +15,17 @@ devise_for :users
 
 resources :comments, :only => [:create]
 
-resources :users
 
 resources :events
 
+resources :users do
+  resources :create_a_day
+end
 
 
-  resources :outdoor_areas
+
+resources :outdoor_areas
+
 
 
 

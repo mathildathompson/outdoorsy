@@ -10,14 +10,24 @@ $(document).ready(function(){
         return user.name.match(matchTerm);
         });
 
-		console.log(results);
+
+        console.log(results);
 	    var html = "<p>" + results[0].name + "</p>";
 	    html = html + '<a href="/users/create?friend_id=X" data-method="post" rel="nofollow">Add as friend</a>';
 	    html = html.replace("X", "" + results[0].id);
 	    $('#searchresult').html('').append(html)
 
 
+	
 	});
+
+	// _.each(currentuserfriends, function(friend){
+	// 	console.log(friend);
+	// 	var list = "<p>" + friend.name + "</p>";
+	// 	list = list + '<a href="/users/show?friend_id=X" data-method="post" rel="nofollow">Add to day</a>';
+	// 	list = list.replace("X", "" + friend.id);
+	// 	$('.selectfriends').append(list);
+	// });
 
 
 
