@@ -32,7 +32,9 @@ Select a date:
 
 <div id="parkslist">
 <h2>Parks</h2>
+
 <ul id="parkappend" class="fly-simplified">
+
 <% @parks.each do |park| %>
 
 <%= render :partial => 'outdoor_areas/park', :locals => {:park => park} %>
