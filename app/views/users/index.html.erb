@@ -1,6 +1,30 @@
-<h2> Welcome to Outdoorsy </h2> 
-
+<div class ="header">
+<div class="login">
 <%= link_to 'Sign Out',  destroy_user_session_path %>
 <%= link_to 'Sign In', user_session_path %>
 <%= link_to 'Sign Up', new_user_registration_path %>
+</div>
+
+<div class="welcome">
+	<h2> Welcome to Outdoorsy </h2> 
+</div>
+
+<div class="search">
+
+		<div id='searchbox'>
+			<input type='text' id='search' placeholder='searchforfriends'/>
+		</div>
+
+		<div id='searchresult'>
+		</div>
+		<%#= link_to "Add Friend", users_create_path(:friend_id => results[0].id), :method => :get %>
+</div>
+
+<div class="selectfriends">
+
+	
+</div>
+
+</div>
+
 
