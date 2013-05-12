@@ -53,7 +53,7 @@ h1#logo {
 #areasearch{
   padding-left: 30px;
   padding-top:10px;
-  width: 600px;
+  width: 550px;
    height: 50px;
    margin-left: 5px;
    border: 5px solid white;
@@ -68,8 +68,8 @@ h1#logo {
 }
 
 .locationbar{
-  height:30px;
-  width: 320px;
+  height:40px;
+  width: 240px;
   background-color: #FA8816 ;
   padding-left: 30px;
   padding-top:5px;
@@ -117,11 +117,15 @@ h1#logo {
   right: 0px;
 }
 
+#rating {
+  background-color: red;
+}
+
 ul {
 
   position: relative;
-  width: 360px;
-  height: 480px;
+  width: 300px;
+  height: 240px;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -142,9 +146,9 @@ ul {
     // font-size: 18px;
     z-index: 2;
      height:30px;
-  width: 320px;
+  width: 240px;
   background-color: #FA8816 ;
-  padding-left: 30px;
+  padding-left: 20px;
   padding-top:5px;
   margin: 5px;
   color: white;
@@ -155,6 +159,12 @@ ul {
         -ms-transform: translateZ(0px);
          -o-transform: translateZ(0px);
             transform: translateZ(0px);
+  }
+
+  #parkslist {
+    position: absolute;
+    top: 173px;
+    left: 350px;
   }
   // ul li:nth-child(odd) {
   //   background: #fff;
