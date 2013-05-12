@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('#search').change(function() {
+  $('#areasearch').change(function() {
     var searchterm = $(this).val();
     console.log($(this).val());
     $.ajax({
