@@ -23,8 +23,8 @@ $(function(){
   $("#datepicker").datepicker({
 
 
-  	onSelect: function() {
-  		console.log("Hi there");
+  	onSelect: function(date) {
+  		console.log(date);
   	},
 
   	});

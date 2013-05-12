@@ -17,7 +17,7 @@ Select a date:
 
 <%= render :partial => 'events/form' %>
 
-<h1>Outdoor Restaurants</h1>
+<h2>Outdoor Restaurants</h2>
 
 <div id="restaurants">
 
@@ -27,6 +27,22 @@ Select a date:
 <% end %>
 </ul>
 </div>
+
+
+
+<div id="parkslist">
+<h2>Parks</h2>
+<ul id="parkappend" class="fly-simplified">
+<% @parks.each do |park| %>
+
+<%= render :partial => 'outdoor_areas/park', :locals => {:park => park} %>
+
+
+<% end %>
+</ul>
+
+</div> 
+
 
 <h1>Events</h1>
 <div id="meetups" style="overflow: scroll; width: 850px; height: 200px;">
@@ -40,6 +56,3 @@ Select a date:
 
 </div>
 </div>
-
-
-
