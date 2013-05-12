@@ -17,6 +17,7 @@ gem 'shoulda'
 gem 'mocha'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-timepicker-rails'
 
 group :test do
 	gem 'cucumber-rails'

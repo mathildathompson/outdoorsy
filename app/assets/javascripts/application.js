@@ -15,3 +15,18 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
+
+$(function(){
+  $.datepicker.setDefaults(
+    $.extend($.datepicker.regional[""])
+  );
+  $("#datepicker").datepicker({
+
+
+  	onSelect: function() {
+  		console.log("Hi there");
+  	},
+
+  	});
+});
+

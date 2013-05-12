@@ -1,0 +1,25 @@
+<h1 color="red">Parks & Outdoor Areas in NYC</h1>
+
+<div style="width: 800px;">
+<div style="float:left">
+<% @parks.each do |x| %>
+  
+    <b><h3 style="color:#E01B6A"><%= x.name %></b></h3>
+    <%= x.address.gsub(/[{}",:zipaddressctytt]/, ":,zip" => '', "address" => "", "ctytt" => '') %>
+    <br>Acres: <%= x.acreage %> 
+
+<!-- 'hello'.gsub(/[eo]/, 'e' => 3, 'o' => '*')    #=> "h3ll*"
+ -->
+    <BR>
+
+
+ 
+<% end %>
+
+</div>
+</div>
+
+
+
+<br />
+

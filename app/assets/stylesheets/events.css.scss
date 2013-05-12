@@ -1,10 +1,23 @@
 #header{
-height:90px;
+height:75px;
 width: 100%;
-background-color: #F5CC00;
+// background-color: #F5CC00;
 background-size: 200px;
 position: fixed;
 top:0px;
+
+
+background: #fefcea url(http://www.aperfectworld.org/clipart/weather/sun15.png) no-repeat top right; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #fefcea 0%, #f1da36 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fefcea), color-stop(100%,#f1da36)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #fefcea 0%,#f1da36 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #fefcea 0%,#f1da36 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #fefcea 0%,#f1da36 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #fefcea 0%,#f1da36 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
 }
 
 * {
@@ -90,14 +103,14 @@ h1#logo {
   display: inline-block;
   position: fixed;
   right: 0px;
-  top: 90px;
+  top: 76px;
 }
 
 #droparea{
   height: 300px;
   width: 595px;
   background-color: white;
-  border: 5px solid black;
+  border: 1px solid black;
    display: inline-block;
   position: fixed;
   bottom: 5px;

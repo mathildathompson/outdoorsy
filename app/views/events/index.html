@@ -9,6 +9,10 @@
 </div>
 <div id="mainpage">
 
+Select a date: 
+<input id="datepicker" type="text" />
+<input type="submit" value="Create a Day Out" /> 
+
 
 
 <%= render :partial => 'events/form' %>
@@ -29,6 +33,10 @@
 <% @meetups.each do |meetup| %>
 <%= render :partial => 'meetups/meetup', :locals => {:meetup => @meetup} %>
 <% end %>
+
+
+
+
 
 </div>
 </div>
