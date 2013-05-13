@@ -9,6 +9,7 @@ $(document).ready(function() {
       data: {searchterm: searchterm},
       success: function(){
         stroll.bind( "#restaurantslist" );
+        stroll.bind( "#parkappend" );
         var $gallery = $( "#restaurantslist" ),
         $trash = $( "#droparea" );
 

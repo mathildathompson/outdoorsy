@@ -46,11 +46,11 @@
 
 
 <h2>Events</h2>
-<div id="meetups" class="fly-simplified">
+<ul id="meetups" class="fly-simplified">
 <% @meetups.each do |meetup| %>
 <%= render :partial => 'meetups/meetup', :locals => {:meetup => @meetup} %>
 <% end %>
-
+</ul>
 
 <%= link_to 'Create Event!', events_path, method: :put  %>
 
