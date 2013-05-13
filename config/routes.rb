@@ -16,7 +16,11 @@ devise_for :users
 resources :comments, :only => [:create]
 
 
-resources :events
+resources :events do 
+  collection do
+        put 'newday'
+      end
+  end
 
 resources :users do
   resources :create_a_day
