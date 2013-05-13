@@ -71,7 +71,7 @@ padding-left: 10px;
    height: 50px;
    margin-left: 5px;
    border: 5px solid white;
-   background-color: #59AC59;
+   background-color: #52D9F7;
      color: white;
   font-size: 20px;
    resize: none;
@@ -93,8 +93,8 @@ padding-left: 10px;
   // border: 5px solid white;
 }
 
-.locationbar#meetup{
-  width:540px;
+li#locationbarmeetup{
+  width:800px;
 }
 
 #restaurants{
@@ -131,6 +131,18 @@ padding-left: 10px;
   right: 0px;
 }
 
+ul#meetups{
+
+
+  width: 570px;
+  // list-style: none;
+
+  // position: relative;
+  // margin: 0;
+  // padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 
 ul {
 
@@ -178,10 +190,18 @@ ul {
     left: 350px;
   }
 
+  ul #meetups {
+  width:600px;
+  }
+
+   li #meetup {
+  width:600px;
+  }
+
 #rating {
 position: absolute;
 top: 26px;
-left: 175px;
+right: 5px;
 background-color: white;
 padding: 2px;
 padding-bottom: 0px;

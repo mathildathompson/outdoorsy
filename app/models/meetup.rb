@@ -10,7 +10,7 @@ class Meetup < ActiveRecord::Base
   def self.get_event(topic, latitude, longitude)
   	@meetupresults = []
   	RMeetup::Client.api_key = "10724b26c227570553b1c61111216c"
-    @results = RMeetup::Client.fetch(:events, {:topic => "#{topic}", :lat =>latitude, :lon =>longitude, :radius => 0.5})
+    @results = RMeetup::Client.fetch(:events, {:topic => "#{topic}", :lat =>latitude, :lon =>longitude, :radius => 1})
     @results.each do |result|
 
       meetup = Meetup.new

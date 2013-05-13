@@ -6,6 +6,7 @@ class EventsController < ApplicationController
     @restaurants = []
     @meetups = []
     @parks = []
+
   end
 
   def create
@@ -26,6 +27,7 @@ class EventsController < ApplicationController
   @restaurants = Restaurant.outdoor_restaurant_search(latitude,longitude)
   @meetups = Meetup.get_event("hiking",latitude,longitude)
   @parks = OutdoorArea.near([latitude, longitude], 0.5)
+
   # binding.pry
   render :template => 'events/search', :content_type => 'text/javascript'
 
