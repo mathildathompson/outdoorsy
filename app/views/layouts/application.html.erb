@@ -20,8 +20,13 @@
     initMap();
 
 
-  });
-  </script>
+
+<% @restaurants.each do |item| %> 
+addMarker(<%= restaurant.latitude %>, <%= restaurant.longitude %>, '<%= restaurant.name %>'); 
+<% end  %> }); 
+
+    </script> 
+
 </head>
 
 <body>
