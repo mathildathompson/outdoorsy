@@ -14,11 +14,6 @@ function initMap() {
 
 var styles = [
 {
-  stylers: [
-  { hue: "#F5CC00" },
-  { saturation: -20 }
-  ]
-},{
   featureType: "road",
   elementType: "geometry",
   stylers: [
