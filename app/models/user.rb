@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, :through => :friendships
 
-  has_many :create_a_days, :through => :friend_create_a_days 
-  has_many :create_a_days
+  has_many :events, :through => :eventfriends 
+  has_many :events
 
 end

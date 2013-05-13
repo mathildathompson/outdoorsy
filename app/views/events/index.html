@@ -6,18 +6,17 @@
 </div>
 </div>
 <div id="droparea">
-</div>
-<div id="mainpage">
-
-Select a date: 
 <input id="datepicker" type="text" />
 <input type="submit" value="Create a Day Out" /> 
+
+</div>
+<div id="mainpage">
 
 
 
 <%= render :partial => 'events/form' %>
 
-<h1>Outdoor Restaurants</h1>
+<h2>Outdoor Restaurants</h2>
 
 <div id="restaurants">
 
@@ -28,18 +27,32 @@ Select a date:
 </ul>
 </div>
 
-<h1>Events</h1>
-<div id="meetups" style="overflow: scroll; width: 850px; height: 200px;">
+
+
+<div id="parkslist">
+<h2>Parks</h2>
+
+<ul id="parkappend" class="fly-simplified">
+
+<% @parks.each do |park| %>
+
+<%= render :partial => 'outdoor_areas/park', :locals => {:park => park} %>
+
+
+<% end %>
+</ul>
+
+</div> 
+
+
+<h2>Events</h2>
+<div id="meetups" class="fly-simplified">
 <% @meetups.each do |meetup| %>
 <%= render :partial => 'meetups/meetup', :locals => {:meetup => @meetup} %>
 <% end %>
 
 
-
-
+<%= link_to 'Create Event!', events_path, method: :put  %>
 
 </div>
 </div>
-
-
-

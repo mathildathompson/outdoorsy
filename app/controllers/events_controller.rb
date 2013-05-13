@@ -33,8 +33,9 @@ class EventsController < ApplicationController
 
 
   def update
-    @restaurant = Restaurant.new(params[:restaurant])
-    @event = Event.new 
+    @event = Event.new
+    @restaurant = Restaurant.new
+    
   end 
 
 end
