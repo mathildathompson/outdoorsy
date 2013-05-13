@@ -2,6 +2,7 @@ class OutdoorArea < ActiveRecord::Base
 attr_accessible :latitude, :longitude, :name, :address, :acreage
 
 has_many :day_outs 
+belongs_to :events
 
   def getparkinfo
     #imdb_data = HTTParty.get("http://www.omdbapi.com/?t=#{name}")
