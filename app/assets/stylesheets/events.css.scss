@@ -65,14 +65,14 @@ padding-left: 10px;
    height: 50px;
    margin-left: 5px;
    border: 5px solid white;
-   background-color: #fa8816 ;
+   background-color: #59AC59;
      color: white;
   font-size: 20px;
    resize: none;
 }
 
 #areasearch:focus{
-  outline: #F00000 solid thin;
+  outline: #00FF00 solid thin;
 }
 
 .locationbar{
@@ -151,9 +151,9 @@ ul {
     // font-size: 18px;
     z-index: 2;
      height:44px;
-  width: 250px;
+  width: 255px;
   background-color: #FFA92F ;
-  padding-left: 20px;
+  padding-left: 10px;
   padding-top:5px;
   margin: 5px;
   color: #8F0000;
@@ -174,8 +174,8 @@ ul {
 
 #rating {
 position: absolute;
-top: 24px;
-left: 178px;
+top: 26px;
+left: 175px;
 background-color: white;
 padding: 2px;
 padding-bottom: 0px;
@@ -187,6 +187,7 @@ border-radius: 3px;
 #datepicker {
   margin: 10px;
 }
+
   // ul li:nth-child(odd) {
   //   background: #fff;
   // }

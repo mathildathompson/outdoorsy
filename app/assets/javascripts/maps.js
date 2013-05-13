@@ -53,7 +53,7 @@ function addMarker(latitude, longitude, title) {
   var marker = new google.maps.Marker({
     position: markerLatlng,
     map: map,
-    title: title
+    title: "title"
   
   });
 };
