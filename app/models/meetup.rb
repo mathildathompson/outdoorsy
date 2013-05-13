@@ -4,6 +4,7 @@ class Meetup < ActiveRecord::Base
   :name,
   :yes_rsvp_count,
   :event_url
+  belongs_to :events
  
 
   def self.get_event(topic, latitude, longitude)

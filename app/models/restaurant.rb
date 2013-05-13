@@ -14,7 +14,9 @@ class Restaurant < ActiveRecord::Base
   :foursquare_review,
   :wifi,
   :outdoor_area, 
-  :category
+  :category,
+  :event_id
+  belongs_to :events
   
 
 def self.outdoor_restaurant_search(latitude, longitude)
@@ -35,7 +37,7 @@ def self.outdoor_restaurant_search(latitude, longitude)
         restaurant.yelp_stars_url = rest["rating_img_url"]
         restaurant.category = rest["categories"][0][0]
         @outdoorresults << restaurant
-        # restaurant.save
+        restaurant.save
       end
 
       return @outdoorresults
