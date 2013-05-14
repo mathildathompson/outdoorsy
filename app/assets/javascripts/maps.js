@@ -1,5 +1,7 @@
 var map;
 
+var markers = [];
+
 function initMap() {
  var myLatlng = new google.maps.LatLng(40.7509915, -73.9888797);
 
@@ -42,15 +44,50 @@ map.setMapTypeId('map_style');
 
 };
 
+// map: an instance of google.maps.Map object
+// latlng: an array of google.maps.LatLng objects
+
+
+var latlng = [];
+
 function addMarker(latitude, longitude, title) {
   
   var markerLatlng = new google.maps.LatLng(latitude, longitude);
   var marker = new google.maps.Marker({
     position: markerLatlng,
     map: map,
-    title: "title"
-  
+    title: title
   });
+  markers.push(marker);
+  latlng.push(markerLatlng);
 };
 
+function zoomin(latlng){
+var latlngbounds = new google.maps.LatLngBounds();
+for (var i = 0; i < latlng.length; i++) {
+  latlngbounds.extend(latlng[i]);
+}
+map.fitBounds(latlngbounds);
+};
+// Sets the map on all markers in the array.
+function setAllMap(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
 
+// Removes the overlays from the map, but keeps them in the array.
+function clearOverlays() {
+  setAllMap(null);
+}
+
+// Shows any overlays currently in the array.
+function showOverlays() {
+  setAllMap(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteOverlays() {
+  clearOverlays();
+  markers = [];
+}

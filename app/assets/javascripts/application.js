@@ -16,4 +16,15 @@
 //= require jquery-ui
 //= require_tree .
 
-// 
+$(function(){
+  $.datepicker.setDefaults(
+    $.extend($.datepicker.regional[""])
+  );
+  $("#datepicker").datepicker({
+  	onSelect: function(date) {
+  		$("#createbutton").val(date);
+  	},
+
+  	});
+});
+

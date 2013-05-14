@@ -23,3 +23,18 @@ $('#parkappend').html("");
   $('#parkappend').append('<%= escape_javascript(render park, :locals => {:outdoor_area => park}) %>');
 
 <% end %>
+
+$('#droparea ul').html("");
+ 
+deleteOverlays();
+ <% @restaurants.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+  <% @meetups.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+  <% @parks.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+zoomin(latlng);
+latlng = [];

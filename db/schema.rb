@@ -11,21 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513042901) do
+ActiveRecord::Schema.define(:version => 20130514034520) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "day_outs", :force => true do |t|
-    t.string   "date"
-    t.integer  "user_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.integer  "outdoor_area_id"
   end
 
   create_table "event_friends", :force => true do |t|
@@ -40,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130513042901) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.string   "name"
+    t.date     "event_date"
   end
 
   create_table "friend_create_a_days", :force => true do |t|
@@ -77,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130513042901) do
     t.string   "event_url"
     t.text     "description"
     t.integer  "yes_rsvp_count"
+    t.integer  "event_id"
   end
 
   create_table "outdoor_areas", :force => true do |t|
@@ -87,12 +81,14 @@ ActiveRecord::Schema.define(:version => 20130513042901) do
     t.float    "acreage"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "event_id"
   end
 
   create_table "restaurants", :force => true do |t|
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.integer  "latitude"
+    t.float    "longitude"
+    t.float    "latitude"
     t.string   "city"
     t.string   "state"
     t.string   "yelp_id"

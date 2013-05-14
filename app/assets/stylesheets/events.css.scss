@@ -30,6 +30,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   background-color: red;
 }
 
+#popup{
+  height: 80%;
+  width: 55%;
+  background-color: white;
+  position: fixed;
+  z-index:100;
+  top:150px;
+  left: 0px;
+  
+  border-top-right-radius:3em;
+  border-bottom-right-radius:3em;
+  display: none;
+
+  -moz-box-shadow: 0 0 30px 5px #999;
+-webkit-box-shadow: 0 0 30px 5px #999;
+}
+
 body{
   margin: 0;
   height: 100%;
@@ -117,7 +134,7 @@ li#locationbarmeetup{
   display: inline-block;
   position: absolute;
   right: 0px;
-  top: 0px;
+  top: 80px;
 }
 
 #droparea{

@@ -17,8 +17,16 @@ $(document).ready(function() {
     initMap();
 
 
-});
 
+});
+   
+   
+
+       users = <%=raw(User.all.to_json) %>
+      <% if user_signed_in? %>
+      current_user = <%= raw(current_user.to_json) %>
+      currentuserfriends = <%=raw(current_user.friends.all.to_json) %>
+      <% end %>
     </script> 
 
 

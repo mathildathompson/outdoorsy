@@ -1,25 +1,35 @@
-$('#restaurantslist').html("");
+$('div#popup').html("");
+$('div#popup').show("drop", { direction: "left" }, 500, function () {
+
+$('div#popup').append('<%= @event.name %>');
 
 <% @restaurants.each do |restaurant| %>
+$('div#popup').append('<%= escape_javascript(render restaurant, :locals => {:restaurant => @restaurant}) %>');
+<% end %>
 
-  $('#restaurantslist').append('<%= escape_javascript(render restaurant, :locals => {:restaurant => @restaurant}) %>');
+<% @meetups.each do |meetup| %>
+
+  $('div#popup').append('<%= escape_javascript(render meetup, :locals => {:meetup => @meetups}) %>');
 
 <% end %>
 
-// $('#meetups').html("");
+<% @parks.each do |park| %>
 
-// <% @meetups.each do |meetup| %>
+  $('div#popup').append('<%= escape_javascript(render park, :locals => {:outdoor_area => park}) %>');
 
-//   $('#meetups').append('<%= escape_javascript(render meetup, :locals => {:meetup => @meetups}) %>');
+<% end %>
+deleteOverlays();
+ <% @restaurants.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+  <% @meetups.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+  <% @parks.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+zoomin(latlng);
+latlng = [];
 
-// <% end %>
 
-
-
-// $('#parkappend').html("");
-
-// <% @parks.each do |park| %>
-
-//   $('#parkappend').append('<%= escape_javascript(render park, :locals => {:outdoor_area => park}) %>');
-
-// <% end %>
+});
