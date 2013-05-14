@@ -2,6 +2,7 @@
 <!-- <div class="locationbar"> -->
   <%= restaurant.name %>,
   <%= restaurant.address %><BR>
-  <img id="rating" src="<%= restaurant.yelp_stars_url.html_safe %>" />
+  <a href="<%= restaurant.yelp_url %>" target="_blank"> <img id="rating" src="<%= restaurant.yelp_stars_url.html_safe %>" />
+  </a>
 
 </li>

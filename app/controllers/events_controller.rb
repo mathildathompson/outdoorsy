@@ -21,11 +21,16 @@ class EventsController < ApplicationController
     else
       latlng = Geocoder.coordinates("#{searchterm}, #{ipcity}")
     end
+    @meetups = []
 
     latitude = latlng[0]
     longitude = latlng[1]
     @restaurants = Restaurant.outdoor_restaurant_search(latitude,longitude)
-    @meetups = Meetup.get_event("hiking",latitude,longitude)
+    # binding.pry
+    @meetups << Meetup.get_event("yoga",latitude,longitude)
+    @meetups << Meetup.get_event("hiking",latitude,longitude)
+    @meetups << Meetup.get_event("park",latitude,longitude)
+    @meetups.flatten!
     # binding.pry
     @parks = OutdoorArea.near([latitude, longitude], 0.5)
 

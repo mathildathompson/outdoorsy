@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514034520) do
+ActiveRecord::Schema.define(:version => 20130514150358) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20130514034520) do
     t.boolean  "outdoor_area"
     t.string   "category"
     t.integer  "event_id"
+    t.string   "yelp_url"
   end
 
   create_table "users", :force => true do |t|
