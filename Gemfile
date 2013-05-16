@@ -23,10 +23,10 @@ gem 'jquery-timepicker-rails'
 
 
 group :test do
-	gem 'cucumber-rails'
+	# gem 'cucumber-rails'
 	gem 'database_cleaner'
 	gem 'shoulda'
-  gem 'capybara'
+  # gem 'capybara'
   gem 'sqlite3'
 end 
 
