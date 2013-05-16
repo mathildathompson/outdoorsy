@@ -19,8 +19,14 @@
     $(document).ready(function() {
     initMap();
 
+    parks = <%=raw(OutdoorArea.all.to_json) %>
+ 
+      <% OutdoorArea.all.each do |x| %>
+      addMarker(<%=x.latitude%>, <%=x.longitude%>, '<%=x.name%>');
+      <%end%>
 
   });
+
   </script>
 </head>
 
