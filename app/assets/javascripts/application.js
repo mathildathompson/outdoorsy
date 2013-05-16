@@ -21,10 +21,8 @@ $(function(){
     $.extend($.datepicker.regional[""])
   );
   $("#datepicker").datepicker({
-
-
   	onSelect: function(date) {
-  		console.log(date);
+  		$("#createbutton").val(date);
   	},
 
   	});

@@ -7,15 +7,20 @@
 </div>
 <div id="droparea">
 <input id="datepicker" type="text" />
-<input type="submit" value="Create a Day Out" /> 
-
+<div id="createbutton" class="button orange">
+Create Day!
 </div>
+<h3>Drap and Drop Items</h3>
+</div>
+
+<div id="popup">
+</div>
+
 <div id="mainpage">
-
-
 
 <%= render :partial => 'events/form' %>
 
+<div id="leftside">
 <h2>Outdoor Restaurants</h2>
 
 <div id="restaurants">
@@ -53,5 +58,9 @@
 <% end %>
 </ul>
 
+
+
+</div>
+</div>
 
 </div>

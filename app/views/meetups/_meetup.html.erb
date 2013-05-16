@@ -1,5 +1,7 @@
 
-  <li id="locationbarmeetup">
-  <%= meetup.name %>
+  <li class="locationbarmeetup" data-id="meetup <%= meetup.id %>">
+ 
+  <%= meetup.name.chop %>
+  <%= link_to 'More Info', meetup.event_url, :target => '_blank' %>
 </li>
 

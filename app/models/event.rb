@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   # attr_accessible :title, :body
-  attr_accessible :user_id
+  attr_accessible :user_id, :event_date
   belongs_to :user 
   has_many :friends, :through => :eventfriends
   has_many :eventfriends

@@ -5,34 +5,35 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# '
 gem 'devise'
-gem 'poltergeist'
+# gem 'poltergeist'
 gem 'rmeetup'
 gem 'foursquare2', '~> 1.9.6'
 gem 'geocoder'
 gem 'pry'
 gem 'yelpster'
 gem 'shoulda'
-gem 'mocha'
+# gem 'mocha'
 gem 'jquery-rails'
-
+gem 'pg'
 gem 'better_errors'
-
-
 gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
 
 
 group :test do
-	gem 'cucumber-rails'
+	# gem 'cucumber-rails'
 	gem 'database_cleaner'
 	gem 'shoulda'
+  # gem 'capybara'
+  gem 'sqlite3'
 end 
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'database_cleaner'
+  gem 'sqlite3'
 end
 
 # Gems used only for assets and not required

@@ -21,7 +21,7 @@ belongs_to :events
     binding.pry
     
     parkresults = []
-    output = OutdoorArea.near([latitude, longitude], 0.6)
+    output = OutdoorArea.near([latitude, longitude], 0.5)
     parkresults << output 
     parkresults.each do |p|
       parks = OutdoorArea.new

@@ -15,7 +15,8 @@ class Restaurant < ActiveRecord::Base
   :wifi,
   :outdoor_area, 
   :category,
-  :event_id
+  :event_id,
+  :yelp_url
   belongs_to :events
   
 
@@ -34,8 +35,11 @@ def self.outdoor_restaurant_search(latitude, longitude)
         restaurant.city = rest["location"]["city"]
         restaurant.yelp_rating = rest["rating"] 
         restaurant.address = rest["location"]["address"][0]
+        restaurant.latitude = rest["location"]["coordinate"]["latitude"]
+        restaurant.longitude = rest["location"]["coordinate"]["longitude"]
         restaurant.yelp_stars_url = rest["rating_img_url"]
         restaurant.category = rest["categories"][0][0]
+        restaurant.yelp_url = rest["url"] 
         @outdoorresults << restaurant
         restaurant.save
       end

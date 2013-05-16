@@ -1,0 +1,59 @@
+$('div#popup').html("");
+$('div#popup').show("drop", { direction: "left" }, 500, function () {
+
+$('div#popup').append('<h2>Event Created for <%= @event.name %></h2>');
+
+<% @restaurants.each do |restaurant| %>
+$('div#popup').append('<%= escape_javascript(render restaurant, :locals => {:restaurant => @restaurant}) %>');
+<% end %>
+
+<% @meetups.each do |meetup| %>
+
+  $('div#popup').append('<%= escape_javascript(render meetup, :locals => {:meetup => @meetups}) %>');
+
+<% end %>
+
+<% @parks.each do |park| %>
+
+  $('div#popup').append('<%= escape_javascript(render park, :locals => {:outdoor_area => park}) %>');
+
+<% end %>
+
+ $('div#popup li').removeClass("locationbarmeetup");
+ $('div#popup').append('<%= escape_javascript(render 'users/user') %>');
+
+deleteOverlays();
+ <% @restaurants.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+  <% @meetups.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+  <% @parks.each do |item| %>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+ <% end %>
+zoomin(latlng);
+latlng = [];
+
+  $('#search').change(function(){
+
+     var searchTerm = $('#search').val();
+     $('#search').val('');
+
+    var results = _.filter(users, function(user) {
+        var matchTerm = new RegExp(searchTerm);
+        return user.name.match(matchTerm);
+        });
+
+
+        console.log(results);
+      var html = "<p>" + results[0].name + "</p>";
+      html = html + '<a href="/users/create?friend_id=X" data-method="post" rel="nofollow">Add as friend</a>';
+      html = html.replace("X", "" + results[0].id);
+      $('#searchresult').html('').append(html)
+
+
+  
+  });
+
+});

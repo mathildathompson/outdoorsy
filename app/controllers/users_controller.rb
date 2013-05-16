@@ -30,7 +30,7 @@ def create
   @friendship.save!
   end
 
-  redirect_to users_path
+  redirect_to events_path
   end
 
 

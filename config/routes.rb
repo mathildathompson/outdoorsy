@@ -1,22 +1,27 @@
 Outdoorsy::Application.routes.draw do
-
-
- post "users/show"
-
-  post "users/create"
-
-
-authenticated :user do
-  root :to => 'users#index'
-end
-
-root :to => "users#index"
 devise_for :users
 
+
+
+
+# authenticated :user do
+#   root :to => 'users#index'
+# end
+
+root :to => "events#index"
+
+
 resources :comments, :only => [:create]
+ 
+post "users/show"
 
+post "users/create"
 
-resources :events
+resources :events do 
+  collection do
+        put 'newday'
+      end
+  end
 
 resources :users do
   resources :create_a_day
