@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   $('#areasearch').change(function() {
+    $('#droparea h3').show();
     $('div#popup').hide("drop", { direction: "left" }, 500);
     var searchterm = $(this).val();
     console.log($(this).val());
@@ -55,6 +56,7 @@ $(document).ready(function() {
         stroll.bind( "#restaurantslist" );
         stroll.bind( "#parkappend" );
         stroll.bind( "#meetups" );
+        $('#droparea h3').hide();
       }
     });
 

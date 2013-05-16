@@ -1,20 +1,21 @@
 Outdoorsy::Application.routes.draw do
-
-
- post "users/show"
-
-  post "users/create"
-
-
-authenticated :user do
-  root :to => 'users#index'
-end
-
-root :to => "users#index"
 devise_for :users
 
-resources :comments, :only => [:create]
 
+
+
+# authenticated :user do
+#   root :to => 'users#index'
+# end
+
+root :to => "events#index"
+
+
+resources :comments, :only => [:create]
+ 
+post "users/show"
+
+post "users/create"
 
 resources :events do 
   collection do

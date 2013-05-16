@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+before_filter :authenticate_user!
 
   def index
 
@@ -43,6 +43,7 @@ end
 
 def newday
   @event = Event.create
+  @event.user_id = current_user.id
   results = params[:results]
 
   results.each do |result|

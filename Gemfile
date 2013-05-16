@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'devise'
-gem 'poltergeist'
+# gem 'poltergeist'
 gem 'rmeetup'
 gem 'foursquare2', '~> 1.9.6'
 gem 'geocoder'
@@ -16,6 +16,7 @@ gem 'yelpster'
 gem 'shoulda'
 gem 'mocha'
 gem 'jquery-rails'
+gem 'pg'
 
 gem 'better_errors'
 
