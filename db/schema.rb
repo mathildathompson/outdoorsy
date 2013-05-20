@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514150358) do
+ActiveRecord::Schema.define(:version => 20130520020927) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "day_outs", :force => true do |t|
+    t.string   "date"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "outdoor_area_id"
   end
 
   create_table "event_friends", :force => true do |t|
@@ -87,8 +95,6 @@ ActiveRecord::Schema.define(:version => 20130514150358) do
   create_table "restaurants", :force => true do |t|
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.float    "longitude"
-    t.float    "latitude"
     t.string   "city"
     t.string   "state"
     t.string   "yelp_id"
@@ -105,6 +111,8 @@ ActiveRecord::Schema.define(:version => 20130514150358) do
     t.string   "category"
     t.integer  "event_id"
     t.string   "yelp_url"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "users", :force => true do |t|
@@ -127,12 +135,13 @@ ActiveRecord::Schema.define(:version => 20130514150358) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "wifis", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "location"
     t.string   "name"
     t.string   "address"
     t.float    "latitude"
+    t.string   "AddLongitudeToWifi"
     t.float    "longitude"
   end
 

@@ -1,6 +1,5 @@
 class AddLatitudeToRestaurants < ActiveRecord::Migration
   def change
-    add_column :restaurants, :latitude, :float
     add_column :restaurants, :city, :string
     add_column :restaurants, :state, :string
     add_column :restaurants, :yelp_id, :string
