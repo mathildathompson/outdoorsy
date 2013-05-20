@@ -30,13 +30,13 @@ $('#parkappend').html("");
  
 
  <% @restaurants.each do |item| %>
-    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>','rest');
  <% end %>
   <% @meetups.each do |item| %>
-    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>','meetup');
  <% end %>
   <% @parks.each do |item| %>
-    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>');
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name %>','park');
  <% end %>
 zoomin(latlng);
 latlng = [];

@@ -50,17 +50,36 @@ map.setMapTypeId('map_style');
 
 var latlng = [];
 
-function addMarker(latitude, longitude, title) {
-  
-  var markerLatlng = new google.maps.LatLng(latitude, longitude);
-  var marker = new google.maps.Marker({
-    position: markerLatlng,
-    map: map,
-    title: title
-  });
+function addMarker(latitude, longitude, title, whatami) {
+    var markerLatlng = new google.maps.LatLng(latitude, longitude);
+    var markerSettings={
+        position: markerLatlng,
+        map: map,   
+        title: title
+      }
+    //this way we still use the default marker when there is none set
+    switch (whatami) {
+        case 'park':
+        markerSettings.icon = '/assets/parkmarker.png';
+        break;
+
+        case 'rest':
+        markerSettings.icon = '/assets/restaurantmarker.png';
+        break;
+
+        case 'meetup':
+        markerSettings.icon = '/assets/meetupmarker.png';
+        break;
+      }
+
+  var marker = new google.maps.Marker(markerSettings);
   markers.push(marker);
   latlng.push(markerLatlng);
 };
+
+
+
+
 
 function zoomin(latlng){
 var latlngbounds = new google.maps.LatLngBounds();
