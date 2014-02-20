@@ -28,3 +28,4 @@ $(function(){
   	});
 });
 
+console.log('ji');
